@@ -4,7 +4,8 @@ function startProducer(topic) {
     setInterval(() => {
         const message = {
             id: generateUniqueId(),
-            content: `Message content for ${topic}`
+            content: `Message content for ${topic}`,
+            date: new Date().toISOString()
         };
         publishMessage(topic, message);
         console.log(`Published message to ${topic}:`, message);

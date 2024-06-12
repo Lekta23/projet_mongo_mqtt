@@ -1,3 +1,5 @@
+const { loadPendingMessages } = require('../db/mongoHandler.js')
+
 const queues = {};
 
 function getQueue(topic) {
@@ -20,4 +22,11 @@ function ackMessage(topic, messageId) {
     }
 }
 
-module.exports = { getQueue, addMessage, ackMessage };
+async function loadPendingMessagesQueue(topic) {
+    const messages = await loadPendingMessages(topic);
+    messages.forEach(message => addMessage(topic, message));
+    console.log(`Loaded ${messages.length} pending messages for ${topic}`);
+}
+
+
+module.exports = { getQueue, addMessage, ackMessage, loadPendingMessagesQueue };

@@ -1,6 +1,6 @@
 const { getQueue, ackMessage, addMessage } = require('../queue/messageQueue.js');
 const { subscribeToTopic } = require('../mqtt/mqttHandler.js');
-const { saveMessage } = require('../db/mongoHandler.js');
+const { saveMessage, processMessage } = require('../db/mongoHandler.js');
 
 function startConsumer(consumerId, topic) {
     subscribeToTopic(topic, async (message) => {
@@ -8,8 +8,7 @@ function startConsumer(consumerId, topic) {
 
         try {
             // Traitement du message
-            await processMessage(message);
-            
+            await processMessage(topic, { ...message, acknowledged: false });
             // Accusé de réception du message
             ackMessage(topic, message.id);
             await saveMessage(topic, { ...message, acknowledged: true });
@@ -23,13 +22,6 @@ function startConsumer(consumerId, topic) {
             }, 5000); // Ré-enqueue après 5 secondes (ajustez le délai si nécessaire)
         }
     });
-}
-
-async function processMessage(message) {
-    console.log('Processing message:', message);
-    // Simule un traitement avec un délai
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    // Ajoutez ici la logique de traitement réel
 }
 
 module.exports = { startConsumer };

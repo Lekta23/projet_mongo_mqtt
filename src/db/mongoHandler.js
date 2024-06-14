@@ -40,6 +40,25 @@ async function saveMessage(topic, message) {
     }
 }
 
+async function processMessage(topic, message) {
+    console.log('Processing message:', message);
+    // Simule un traitement avec un délai
+    try {
+        const collection = db.collection(topic);
+            await collection.updateOne(
+                { id: message.id },
+                { $set: message },
+                { upsert: true }
+            );
+        console.log(`Message saved to ${topic}:`, message);
+    } catch (error) {
+        console.error(`Failed to save message to ${topic}:`, error);
+        throw error;
+    }
+}
+
+
+
 async function loadPendingMessages(topic) {
     try {
         const collection = db.collection(topic);
@@ -50,4 +69,4 @@ async function loadPendingMessages(topic) {
     }
 }
 
-module.exports = { initMongo, saveMessage, loadPendingMessages  };
+module.exports = { initMongo, saveMessage, loadPendingMessages, processMessage  };

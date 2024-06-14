@@ -5,6 +5,8 @@
 - main.js : Le point d'entrée principal du projet.
 - src/consumer/consumer.js : Script pour démarrer les consommateurs MQTT.
 - src/db/mongoHandler.js : Gestionnaire de la base de données MongoDB.
+  Changement de l'URL de connexion pour votre base de données MongoDB :
+  ```const client = new MongoClient('mongodb+srv://user:<NOMUTILISATEUR>@cluster0.mongodb.net/'```
 - src/mqtt/mqttHandler.js : Gestionnaire des connexions et des opérations MQTT.
 - src/producer/producer.js : Script pour démarrer les producteurs MQTT.
 - src/queue/messageQueue.js : Gestionnaire de la file de messages.

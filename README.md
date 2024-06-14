@@ -3,9 +3,10 @@
 
 ## Structure du projet
 - main.js : Le point d'entrée principal du projet.
-- package.json : Fichier de configuration contenant les métadonnées du projet et les dépendances.
 - src/consumer/consumer.js : Script pour démarrer les consommateurs MQTT.
 - src/db/mongoHandler.js : Gestionnaire de la base de données MongoDB.
+  * Changement de l'URL de connexion pour votre base de données MongoDB :
+  ```const client = new MongoClient('mongodb+srv://user:<NOMUTILISATEUR>@cluster0.mongodb.net/'```
 - src/mqtt/mqttHandler.js : Gestionnaire des connexions et des opérations MQTT.
 - src/producer/producer.js : Script pour démarrer les producteurs MQTT.
 - src/queue/messageQueue.js : Gestionnaire de la file de messages.
@@ -14,15 +15,15 @@
 Pour installer les dépendances et configurer le projet, suivez les étapes ci-dessous :
 
 1- Clonez le dépôt :
-git clone https://github.com/Lekta23/projet_mongo_mqtt.git
-cd projet_mongo_mqtt-master
+* ```git clone https://github.com/Lekta23/projet_mongo_mqtt.git```
+* ```cd projet_mongo_mqtt-master```
 
 2- Installez les dépendances :
-npm install
+* ```npm install```
 
 ## Utilisation
 Pour démarrer le projet, exécutez simplement la commande suivante :
-npm start
+* ```npm start```
 
 Le script main.js initialisera MongoDB, chargera les messages non validés pour deux topics (topic1 et topic2), puis démarrera deux producteurs et trois consommateurs comme suit :
 

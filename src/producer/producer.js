@@ -1,6 +1,6 @@
 const { publishMessage } = require('../mqtt/mqttHandler.js');
 
-function startProducer(topic) {
+function startProducer(topic, x) {
     setInterval(() => {
         const message = {
             id: generateUniqueId(),
@@ -9,7 +9,7 @@ function startProducer(topic) {
         };
         publishMessage(topic, message);
         console.log(`Published message to ${topic}:`, message);
-    }, 5000);
+    }, x);
 }
 
 function generateUniqueId() {

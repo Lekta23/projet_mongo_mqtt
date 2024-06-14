@@ -1,14 +1,12 @@
 const { getQueue, ackMessage, addMessage } = require('../queue/messageQueue.js');
 const { subscribeToTopic } = require('../mqtt/mqttHandler.js');
-const { saveMessage, processMessage } = require('../db/mongoHandler.js');
+const { saveMessage } = require('../db/mongoHandler.js');
 
 function startConsumer(consumerId, topic) {
     subscribeToTopic(topic, async (message) => {
         console.log(`Consumer ${consumerId} received message:`, message);
 
         try {
-            // Traitement du message
-            await processMessage(topic, { ...message, acknowledged: false });
             // Accusé de réception du message
             ackMessage(topic, message.id);
             await saveMessage(topic, { ...message, acknowledged: true });

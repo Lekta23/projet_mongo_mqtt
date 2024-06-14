@@ -12,8 +12,8 @@ initMongo().then(async () => {
     await loadPendingMessagesQueue('topic2');
 
     // Lancer les producteurs
-    startProducer('topic1');
-    startProducer('topic2');
+    startProducer('topic1', 5000);
+    startProducer('topic2', 10000);
     
     // Lancer les consommateurs
     startConsumer('consumer1', 'topic1');

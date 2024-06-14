@@ -9,8 +9,8 @@ client.on('connect', () => {
 });
 
 function publishMessage(topic, message) {
-    client.publish(topic, JSON.stringify(message), () => {
-        saveMessage(topic, { ...message, acknowledged: false });
+    client.publish(topic, JSON.stringify(message), async () => {
+        await saveMessage(topic, { ...message, acknowledged: false });
         addMessage(topic, message);
     });
 }

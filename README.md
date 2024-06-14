@@ -15,15 +15,15 @@
 Pour installer les dépendances et configurer le projet, suivez les étapes ci-dessous :
 
 1- Clonez le dépôt :
-git clone https://github.com/Lekta23/projet_mongo_mqtt.git
-cd projet_mongo_mqtt-master
+```git clone https://github.com/Lekta23/projet_mongo_mqtt.git```
+```cd projet_mongo_mqtt-master```
 
 2- Installez les dépendances :
-npm install
+```npm install```
 
 ## Utilisation
 Pour démarrer le projet, exécutez simplement la commande suivante :
-npm start
+```npm start```
 
 Le script main.js initialisera MongoDB, chargera les messages non validés pour deux topics (topic1 et topic2), puis démarrera deux producteurs et trois consommateurs comme suit :
 

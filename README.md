@@ -68,6 +68,6 @@ Gère la file de messages en attente de traitement.
 - Topic 2 est un autre canal de communication. Customer 2 et Customer 3 sont des consommateurs qui reçoivent et traitent les messages de Topic 2.
 Cela signifie que Customer 1 est abonné à Topic 1, tandis que Customer 2 et Customer 3 sont abonnés à Topic 2.
 
-![image](https://github.com/Lekta23/projet_mongo_mqtt/assets/61836866/e2374190-3f69-4904-8ee5-fd0493569a59)
+![image](https://github.com/Lekta23/projet_mongo_mqtt/assets/61836866/04344916-f81a-4874-a67b-5f891ff0fdcd)
 ### Schéma du flux de traitement des messages dans un système utilisant MQTT et MongoDB.
 

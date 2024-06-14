@@ -63,11 +63,11 @@ Gère les producteurs MQTT, publiant des messages sur différents topics.
 Gère la file de messages en attente de traitement.
 
 ![image](https://github.com/Lekta23/projet_mongo_mqtt/assets/61836866/fbef7445-c7a4-4b02-b38b-dc329ceb8011)
-Voici le schéma de deux sujets (Topics) qui sont connectés à trois clients (Customers).
-Topic 1 est un canal de communication où les messages sont publiés. Customer 1 est un consommateur qui reçoit et traite les messages de Topic 1.
-Topic 2 est un autre canal de communication. Customer 2 et Customer 3 sont des consommateurs qui reçoivent et traitent les messages de Topic 2.
+### Voici le schéma de deux sujets (Topics) qui sont connectés à trois clients (Customers).
+- Topic 1 est un canal de communication où les messages sont publiés. Customer 1 est un consommateur qui reçoit et traite les messages de Topic 1.
+- Topic 2 est un autre canal de communication. Customer 2 et Customer 3 sont des consommateurs qui reçoivent et traitent les messages de Topic 2.
 Cela signifie que Customer 1 est abonné à Topic 1, tandis que Customer 2 et Customer 3 sont abonnés à Topic 2.
 
 ![image](https://github.com/Lekta23/projet_mongo_mqtt/assets/61836866/57c9542e-a400-482d-be44-ad2e65e74b1e)
-Schéma du flux de traitement des messages dans un système utilisant MQTT et MongoDB.
+### Schéma du flux de traitement des messages dans un système utilisant MQTT et MongoDB.
 

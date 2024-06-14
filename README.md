@@ -3,7 +3,6 @@
 
 ## Structure du projet
 - main.js : Le point d'entrée principal du projet.
-- package.json : Fichier de configuration contenant les métadonnées du projet et les dépendances.
 - src/consumer/consumer.js : Script pour démarrer les consommateurs MQTT.
 - src/db/mongoHandler.js : Gestionnaire de la base de données MongoDB.
 - src/mqtt/mqttHandler.js : Gestionnaire des connexions et des opérations MQTT.

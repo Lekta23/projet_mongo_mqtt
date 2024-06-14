@@ -1,6 +1,6 @@
-const { getQueue, ackMessage, addMessage } = require('../queue/messageQueue.js');
+const { ackMessage, addMessage } = require('../queue/messageQueue.js');
 const { subscribeToTopic } = require('../mqtt/mqttHandler.js');
-const { saveMessage } = require('../db/mongoHandler.js');
+const { deleteMessage } = require('../db/mongoHandler.js');
 
 function startConsumer(consumerId, topic) {
     subscribeToTopic(topic, async (message) => {
@@ -9,7 +9,7 @@ function startConsumer(consumerId, topic) {
         try {
             // Accusé de réception du message
             ackMessage(topic, message.id);
-            await saveMessage(topic, { ...message, acknowledged: true });
+            await deleteMessage(topic, message.id);
             console.log(`Message ${message.id} acknowledged by consumer ${consumerId}`);
         } catch (error) {
             console.error(`Error processing message ${message.id} by consumer ${consumerId}:`, error);

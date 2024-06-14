@@ -40,8 +40,17 @@ async function saveMessage(topic, message) {
     }
 }
 
-
-
+async function deleteMessage(topic, messageId) {
+    try {
+        const collection = db.collection(topic);
+        await collection.deleteOne({ id: messageId });
+        console.log(`Message ${messageId} deleted from ${topic}`);
+    }
+    catch (error) {
+        console.error(`Failed to delete message ${messageId} from ${topic}:`, error);
+        throw error;
+    }
+}
 
 async function loadPendingMessages(topic) {
     try {
@@ -53,4 +62,4 @@ async function loadPendingMessages(topic) {
     }
 }
 
-module.exports = { initMongo, saveMessage, loadPendingMessages  };
+module.exports = { initMongo, saveMessage, loadPendingMessages, deleteMessage  };

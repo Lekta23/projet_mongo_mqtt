@@ -19,11 +19,11 @@ Pour installer les dépendances et configurer le projet, suivez les étapes ci-d
 * ```cd projet_mongo_mqtt-master```
 
 2- Installez les dépendances :
-```npm install```
+* ```npm install```
 
 ## Utilisation
 Pour démarrer le projet, exécutez simplement la commande suivante :
-```npm start```
+* ```npm start```
 
 Le script main.js initialisera MongoDB, chargera les messages non validés pour deux topics (topic1 et topic2), puis démarrera deux producteurs et trois consommateurs comme suit :
 

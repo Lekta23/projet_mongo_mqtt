@@ -15,8 +15,8 @@
 Pour installer les dépendances et configurer le projet, suivez les étapes ci-dessous :
 
 1- Clonez le dépôt :
-```git clone https://github.com/Lekta23/projet_mongo_mqtt.git```
-```cd projet_mongo_mqtt-master```
+* ```git clone https://github.com/Lekta23/projet_mongo_mqtt.git```
+* ```cd projet_mongo_mqtt-master```
 
 2- Installez les dépendances :
 ```npm install```
